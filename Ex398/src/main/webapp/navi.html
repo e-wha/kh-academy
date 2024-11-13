@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		.container {
+			width: 900px;
+			margin: 0 auto;
+			
+		}
+		.navi {
+			width: 900px;
+			height: 60px;
+			padding-bottom: 10px;
+			border-bottom: 2px solid #ccc;
+		}
+		.navi ul {
+			list-style: none;
+			padding-top: 10px;
+			padding-bottom: 5px;
+		}
+		.navi ul li{
+			float: left;
+			width: 150px;
+			padding: 10px;
+		}
+		.navi a:link, .navi a:visited {
+			display: block;
+			font-size: 14px;
+			color: #000;
+			padding: 10px;
+			text-decoration: none;
+			text-align: center;
+		}
+		.navi a:hover, .navi a:focus {
+			background: #222;
+			color: #fff;
+		}
+		.navi a:active {
+			background: #f70;
+		}
+		#signup {
+			background: white;
+			border: 1px solid #222;
+			border-radius: 5px;
+			padding: 20px;
+			width: 400px;
+			margin: 30px auto;
+		}
+		#signup fieldset {
+			border: 1px solid #ccc;
+			margin-bottom: 30px; 
+		}
+		#signup fieldset legend {
+			font-size: 1rem;
+			font-weight: bold;
+			padding-left: 5px;
+			padding-bottom: 10px;
+		}
+		#signup fieldset ul li {
+			line-height: 30px;
+			list-style: none;
+			padding: 5px 10px;
+			margin-bottom: 2px;
+		}
+		#signup input[type=text], input[type=tel] {
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			padding: 5px;
+			width: 200px;
+		}
+		
+		#signup input[type=submit] {
+			border: 1px solid #ccc;
+			border-radius: 20px;
+			display: block;
+			font-size: 1rem 맑은고딕, 굴림, 돋움;
+			letter-spacing: 1px;
+			margin: auto;
+			padding: 7px 25px; 
+		}
+		#signup input:checked + label {
+			color: red;
+			font-weight: bold;
+			margin: 0px auto;
+		}
+		#signup fieldset:first-of-type label{
+			float: left;
+			font-size: 13px;
+			width: 20%;
+		}
+		#signup fieldset:last-of-type label{
+			font-size: 13px;
+			width: 10%;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav class="navi">
+			<ul>
+				<li><a href="pclass.html#intro">이용 안내</a></li>
+				<li><a href="pclass.html#room">객실 소개</a></li>
+				<li><a href="pclass.html#reservation">예약 방법 및 요금</a></li>
+				<li><a href="navi.html">예약하기</a></li>
+			</ul>
+		</nav>
+		
+		<form action="" id="signup">
+			<fieldset>
+				<legend>개인 정보</legend>
+				<ul>
+					<li>
+						<label for="name">이름</label>
+						<input id="name" name="name" type="text" required="required">
+					</li>
+					<li>
+						<label for="tel">연락처</label>
+						<input id="tel" name="tel" type="tel" required="required">
+					</li>
+				</ul>
+			</fieldset>
+			<fieldset>
+				<legend>객실형태</legend>
+				<ul>
+					<li>
+						<input type="radio" name="room" id="basic">
+						<label for="basic">기본형(최대 2인)</label>
+					</li>
+					<li>
+						<input type="radio" name="room" id="family">
+						<label for="family">가족형(최대 8인)</label>
+					</li>
+				</ul>
+			</fieldset>
+			<input type="submit" value="제출">
+		</form>
+	</div>
+</body>
+</html>

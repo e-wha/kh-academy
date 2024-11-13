@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Insert title here</title>
+	<style type="text/css">
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background: url("images/3.jpg") no-repeat fixed;
+			background-size: cover;
+		}
+		h1 {
+			font-size: 4rem;
+		}
+		@media screen and (min-width: 768px) and (max_width: 1440px) {
+			body {
+				background: url("images/1.jpg") no-repeat fixed;
+				color: #fff;
+			}
+		}
+		@media screen and (max-width: 768px) {
+			body {
+				background: url("images/2.jpg") no-repeat fixed;
+			}
+		}
+	</style>
+	
+</head>
+<body>
+	<h1>미디어 쿼리</h1>
+</body>
+</html>

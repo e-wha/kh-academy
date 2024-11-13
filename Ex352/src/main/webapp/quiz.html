@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		.container {
+			width: 100%;
+			display: flex;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+		}
+		.pic {
+			width: 768px auto;
+		}
+		@media screen and (max-width: 768px)  {
+			.pic { 
+				flex-basis: 49%;
+			}
+			
+		}
+		@media screen and (min-width: 789px) and (max-width: 1024px) {
+		
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="pic">
+			<img alt="1" src="images/cat1.jpg">
+		</div>
+		<div class="pic">
+			<img alt="2" src="images/cat2.jpg">
+		</div>
+		<div class="pic">
+			<img alt="3" src="images/cat3.jpg">
+		</div>
+	</div>
+</body>
+</html>

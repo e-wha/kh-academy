@@ -1,0 +1,33 @@
+@charset "UTF-8";
+#Container {
+	text-align: center;
+	border: 1px solid #ccc;
+	margin: 15px;
+	overflow: auto;
+}
+#title{
+	color: #ccc;
+}
+p {
+	font-size: 18px;
+}
+h4 {
+	margin: 20px;
+}
+.travel-card {
+	width: 250px;
+	height: 340px;
+	border: 1px solid #ccc;
+	border-radius: 20px;
+	padding: 10px;
+	text-align: center;
+	display: inline-block;
+	margin: 20px;
+	
+}
+.travel-card img{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	margin-top: 20px;
+}

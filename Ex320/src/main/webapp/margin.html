@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		.container {
+			width: 700px;
+			display: flex;
+			justify-content: space-between;
+			background-color: #eee;
+			border: 1px solid #222;
+			margin-bottom: 30px;
+			
+		}
+		.box {
+			padding: 15px 45px;
+			margin: 5px;
+			width: 80px;
+			text-align: center;
+		}
+		.box:nth-child(odd) {
+			background: orange;
+		}
+		.box:nth-child(even) {
+			background: green;
+		}
+		#box1 {
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box" id="box1">1</div>
+		<div class="box" id="box2">2</div>
+		<div class="box" id="box3">3</div>
+	</div>
+</body>
+</html>
