@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<h1>자리 배치도</h1>
+	<script type="text/javascript">
+		let memNum = parseInt(prompt("입장객 수 : "));
+		let colNum = parseInt(prompt("한 줄에 앉을 사람 수 : "));
+		/* let rowNum; */
+		let rowNum = parseInt(memNum / colNum);
+		
+		/* if(memNum % colNum == 0) {
+			rowNum = memNum / colNum;
+		} else {
+			rowNum = parseInt(memNum / colNum) + 1;
+		}
+		document.write(`필요한 줄의 개수는 ${rowNum}입니다.`); */
+		
+		if(memNum % colNum != 0) {
+			rowNum++;
+		}
+		document.write(`필요한 줄의 개수는 ${rowNum}입니다.`);
+	</script>
+</body>
+</html>

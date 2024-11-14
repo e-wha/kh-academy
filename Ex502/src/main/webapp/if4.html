@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let userNumber = parseInt(prompt("숫자를 입력하세요.", 1));
+		if (!isNaN(userNumber)) {
+			(parseInt(userNumber) % 3 == 0) ? console.log(`3의 배수입니다.`) : console.log(`3의 배수가 아닙니다.`);
+		}
+		else {
+			console.log(`값을 입력해야 합니다.`);
+		}
+	</script>
+	
+</body>
+</html>
