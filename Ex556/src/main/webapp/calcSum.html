@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let userNumber = parseInt(prompt("얼마까지 더할까요?"));
+	
+		function calcSum(n) {
+			let sum = 0;
+			console.log(n);
+			if (!isNaN(n)) {
+				for (let i = 1; i <= n; i++) {
+					sum += i;
+				}
+				document.write(`1부터 ${n}까지 더하면 ${sum}`);
+			} else {
+				document.write(`취소를 누르셨습니다. ${n}`);
+			}
+			return sum;
+		}
+		calcSum(userNumber);
+	</script>
+</body>
+</html>

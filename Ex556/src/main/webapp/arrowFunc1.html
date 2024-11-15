@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let hi = function(user) {
+			return user;
+		}
+		
+		document.write(`익명함수(매개변수) : ${hi("홍길동")} <br>`);
+		
+		let hi1 = (user) => { return user };
+		document.write(`화살표함수(매개변수) : ${hi("이순신")}`);
+	</script>
+</body>
+</html>
