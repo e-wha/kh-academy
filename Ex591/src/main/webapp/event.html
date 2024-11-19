@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport", content="width=device-width, initial-scale=1.0">
+	<title>Insert title here</title>
+	<style type="text/css">
+		body {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		.container {
+			width: 300px;
+		}
+		h1 {
+			text-align: center;
+			border: 1px solid #222;
+			padding: 10px;
+			border-radius: 10px;
+			background-color: #eee;
+		}
+		p {
+			font-size: 1.2em;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1> 당첨자 발표 </h1>
+	</div>
+	<script type="text/javascript">
+		let totalSeed = prompt("전체 응모자 수: ", "");
+		let winner = prompt("당첨자 수: ", "1");
+		
+		document.write(`<p>전체 응모자 수 : ${totalSeed}명 </p>`);
+		document.write(`<p>당첨자 : `);
+		for (let i = 0; i < winner; i++) {
+			let picked = Math.floor((Math.random() * totalSeed) + 1);
+			document.write(`${picked}번, `);
+		}
+	</script>
+</body>
+</html>
