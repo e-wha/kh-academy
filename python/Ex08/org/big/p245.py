@@ -1,0 +1,5 @@
+print('1234'.isdigit())
+print('abcd'.isalpha())
+print('abc123'.isalnum())
+print('abcd'.isupper())
+print(' '.isspace())
