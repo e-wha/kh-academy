@@ -13,4 +13,6 @@ grant select on dept to prev_hw;
 grant select on salgrade to prev_hw;
 
 -- Q3
+show user;
+
 revoke select on salgrade from prev_hw;
