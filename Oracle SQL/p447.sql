@@ -40,9 +40,9 @@ declare
     
     dept_rec rec_dept;
 begin
-    dept_rec.deptno := 50;
-    dept_rec.dname := 'DB';
-    dept_rec.loc := 'SEOUL';
+    dept_rec.deptno := 60;
+    dept_rec.dname := 'SQL';
+    dept_rec.loc := 'BUSAN';
     dbms_output.put_line('DEPTNO : ' || dept_rec.deptno);
     dbms_output.put_line('DNAME : ' || dept_rec.dname);
     dbms_output.put_line('LOC : ' || dept_rec.loc);
