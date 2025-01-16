@@ -7,12 +7,12 @@ public class EmpDTO {
 	private String ename;
 	private String job;
 	private int mgr;
-	private Date hiredate;
+	private String hiredate;
 	private int sal;
 	private int comm;
 	private int deptno;
 	
-	public EmpDTO(int empno, String ename, String job, int mgr, Date hiredate, int sal, int comm, int deptno) {
+	public EmpDTO(int empno, String ename, String job, int mgr, String hiredate, int sal, int comm, int deptno) {
 		this.empno = empno;
 		this.ename = ename;
 		this.job = job;
@@ -55,11 +55,11 @@ public class EmpDTO {
 		this.mgr = mgr;
 	}
 	
-	public Date gethiredate() {
+	public String gethiredate() {
 		return hiredate;
 	}
 	
-	public void sethiredate(Date hiredate) {
+	public void sethiredate(String hiredate) {
 		this.hiredate = hiredate;
 	}
 	

@@ -2,7 +2,9 @@ package org.big.controller;
 
 import java.io.IOException;
 
+import org.big.service.DeptInsertServiceImpl;
 import org.big.service.DeptService;
+import org.big.service.EmpInsertServiceImpl;
 import org.big.service.EmpSelectServiceImpl;
 
 import jakarta.servlet.RequestDispatcher;
@@ -29,11 +31,22 @@ public class EmpFrontController extends HttpServlet{
 		DeptService service = null;
 		String nextPage = null;
 		
-		if (serv.equals("/emp/select.do")) {
+		if (serv.equals("/empSelect.do")) {
 			service = new EmpSelectServiceImpl();
 			service.execute(req, resp);
 			nextPage = "select.jsp";
 		}
+		
+		if (serv.equals("/empInsertData.do")) {
+			nextPage = "empInsert.jsp";
+		}
+		
+		if (serv.equals("/empInsert.do")) {
+	         service = new EmpInsertServiceImpl();
+	         service.execute(req, resp);
+	         nextPage = "empSelect.do";
+	      }
+		
 		RequestDispatcher dis = req.getRequestDispatcher(nextPage);
 		dis.forward(req, resp);
 	}

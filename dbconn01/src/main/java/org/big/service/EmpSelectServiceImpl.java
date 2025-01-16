@@ -13,7 +13,7 @@ public class EmpSelectServiceImpl implements DeptService{
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		EmpDAO dao = new EmpDAO();
         ArrayList<EmpDTO> select = dao.select();
-        req.setAttribute("select", select);
+        req.setAttribute("empSelect", select);
 		
 	}
 }

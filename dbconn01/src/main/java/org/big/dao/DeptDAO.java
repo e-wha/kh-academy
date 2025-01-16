@@ -22,6 +22,72 @@ public class DeptDAO {
 		}
 	}
 	
+	public void input(String _deptno, String _dname, String _loc) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = DriverManager.getConnection(url, userid, passwd);
+			String query = "insert into dept(deptno, dname, loc) values(?, ?, ?)";
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, Integer.parseInt(_deptno));
+			pstmt.setString(2, _dname);
+			pstmt.setString(3, _loc);
+			
+			int n = pstmt.executeUpdate();
+			if (n ==  1) {
+				System.out.println("데이터 입력 성공");
+			} else {
+				System.out.println("데이터 입력 실패!!");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt!=null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			} finally {
+				
+			}
+		}
+	}
+	
+	public void deptUpdate(String _deptno, String _dname, String _loc) {
+	      Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      
+	      try {
+	         conn = DriverManager.getConnection(url, userid, passwd);
+	         String query = "UPDATE dept SET deptno = ?, dname = ?, loc = ? WHERE deptno = ?";
+	         pstmt = conn.prepareStatement(query);
+	         pstmt.setInt(1, Integer.parseInt(_deptno));
+	         pstmt.setString(2, _dname);
+	         pstmt.setString(3, _loc);
+	         pstmt.setInt(4, Integer.parseInt(_deptno));
+	         
+	         int n = pstmt.executeUpdate();
+	         if (n == 1) {
+	            System.out.println("데이터 수정 성공!!");
+	         } else {
+	            System.out.println("데이터 수정 실패!!");   
+	         }
+	         
+	      } catch (Exception e) {
+	         // TODO: handle exception
+	         e.printStackTrace();
+	      } finally {
+	         try {
+	            if(pstmt!=null) pstmt.close();
+	            if(conn!=null) conn.close();
+	         } catch (Exception e2) {
+	            // TODO: handle exception
+	            e2.printStackTrace();
+	         }
+	      }
+	   }
+
 	public ArrayList<DeptDTO> select(){
 		ArrayList<DeptDTO> list = new ArrayList<DeptDTO> ();
 		Connection conn = null;
@@ -51,7 +117,7 @@ public class DeptDAO {
 			if(pstmt != null) rs.close();
 			if(conn != null) conn.close();
 			}	catch (Exception e2) {
-				
+				e2.printStackTrace();
 			} finally {
 				
 			}
