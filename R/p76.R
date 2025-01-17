@@ -228,3 +228,65 @@ names(sale.day[sale.day >= sale.mean])
 #p135
 bt <- c('A', 'B', 'B', 'O', 'AB', 'A')
 bt.new <- factor(bt)
+bt.new
+levels(bt.new)
+
+
+#p137
+bt.new[7] <- 'B'
+bt.new
+bt.new[8] <- 'C'
+bt.new
+as.integer(bt.new)
+
+
+#p138
+h.list <- c('balling', 'tennis', 'ski')
+person <- list(name='Tom', age=25, student=T, hobby=h.list)
+person[1]
+person[[1]]
+person$name
+
+
+#p141
+espresso <- c(4, 5, 3, 6, 5, 4, 7)
+americano <- c(63, 68, 64, 68, 72, 89, 94)
+latte <- c(61, 70, 59, 71, 71, 92, 88)
+cafe <- list(espresso = c(4, 5, 3, 6, 5, 4, 7),
+             americano = c(63, 68, 64, 68, 72, 89, 94),
+             latte = c(61, 70, 59, 71, 71, 92, 88),
+             price = c(2.0, 2.5, 3.0),
+             menu = c('espresso', 'americano', 'latte')
+             )
+cafe
+
+cafe$menu <- factor(cafe$menu)
+cafe$menu
+
+sale.espresso <- cafe$price['espresso'] * cafe$espresso
+sale.espresso <- cafe$price['americano'] * cafe$americano
+sale.espresso <- cafe$price['latte'] * cafe$latte
+
+sum(sale.day)
+sale.mean <- mean(sale.day)
+sale.mean
+names(sale.day[sale.day >= sale.mean])
+
+
+#p147
+#Q1
+리스트, 벡터, 팩터
+
+#Q2
+d
+
+#Q3
+4
+
+#Q4
+a <- 25:150
+condi <- a < 100 & a %% 3 == 0
+a[condi]
+
+#Q5
+a <- c('good', 'great', 'bad', 'okay', 'good', 'bad', 'good')
