@@ -290,3 +290,81 @@ a[condi]
 
 #Q5
 a <- c('good', 'great', 'bad', 'okay', 'good', 'bad', 'good')
+f <- factor(a)
+levels(f)
+
+#Q6
+item <- c(76000, 52000, 36000)
+names(item) <- c('shoes', 'pants', 'shirts')
+discount <- c(0.05, 0.1, 0.05)
+price <- item - item * discount
+price
+sum(price)
+
+#Q7
+smartphone <- list(model = "iphone_se",
+                   capacity = c(64, 128, 256),
+                   display = 'Retina',
+                   color = c('black', 'red', 'white'))
+smartphone$color
+
+#Q8
+weight <- c(56, 23, 89, 46, 76, 14, 97, 72, 68, 62, 35)
+names(weight) <- c('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+diff <- sum(weight) - 600
+weight[weight==min(weight[weight > diff])]
+
+#Q9
+season <- c('여름', '봄', '여름', '겨울', '봄', '겨울', '여름', '여름', '봄', '가을')
+favorite <- factor(season)
+levels(favorite)
+
+#Q10
+vec <- c('호주', '독일', '영국', '일본', '미국', '중국', '호주', '영국', '중국', '일본', '터키', '미국', '중국', '중국', '호주',' 터키',' 독일',' 일본', '중국', '독일')
+country <- factor(vec)
+levels(country)
+as.integer(country)
+
+#Q11
+post <- list(user_id = 'mr_steve',
+             post_id = 'p11010',
+             view = 37,
+             image = FALSE,
+             like = c('creeper', 'ales', 'skeleton', 'enderman'))
+post
+
+#Q12
+account <- list(name = '하늘',
+                number = 123-468-120566,
+                balance = 4128750,
+                history = c(-50000, +20000, -32500, -79000, +42000))
+account
+length(account$history[account$history < 0])
+length(account$history[account$history > 0])
+
+
+#Q1
+point <- c(7, 7, 8, 8, 9, 10, 10, 10, 11, 20)
+answer_sheet <- c(1, 3, 2, 2, 4, 1, 5, 2, 3, 1)
+mark <- c(1, 3, 1, 2, 4, 2, 5, 2, 5, 1)
+length(answer_sheet[answer_sheet==mark])
+sum((answer_sheet==mark) * point)
+point[9 <= point & point <= 11] <- 10
+sum((answer_sheet==mark) * point)
+
+#Q2
+grade <- c(1, 2, 3, 3, 2, 6, 6, 6, 5, 5)
+grade <- factor(grade)
+levels(grade)
+grade[6] <- 9
+grade
+
+
+#Q3
+book <- list('제목' = '바람과 함께 나타나다',
+             '저자' = '심훈',
+             '가격' = 30000,
+             '판매처' = c('한국문고', '가야서점', '길책방'))
+book
+book$저자
+book$판매처[2]
