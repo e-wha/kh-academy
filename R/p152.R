@@ -126,13 +126,13 @@ avg.male
 
 
 #p194~197
-#01
+#Q01
 데이터 프레임
 
-#02
+#Q02
 관측값, 변수
 
-#03
+#Q03
 x <- c(seq(2, 8, 2))
 y <- c(seq(10, 16, 2))
 z <- c(seq(18, 24, 2))
@@ -145,7 +145,7 @@ m
 m <- matrix(c(seq(2, 24, 2)), ncol = 3, byrow = 3)
 m
 
-#04
+#Q04
 x <- c(seq(9, 3, -2))
 y <- c(8, 11, 2, 9)
 m <- rbind(x, y)
@@ -155,7 +155,7 @@ colnames(m) <- c('a', 'b', 'c', 'd')
 rownames(m) <- c('x', 'y')
 m
 
-#05
+#Q05
 #1
 t(m)
 #2
@@ -170,7 +170,7 @@ df.new
 class(df.new)
 str(df.new)
 
-#06
+#Q06
 blood <- c('A', 'B', 'AB', 'B', 'B')
 rh <- c('+', '+', '-', '+', '+')
 age <- c(21, 30, 43, 17, 26)
@@ -183,19 +183,19 @@ colnames(df)
 df.nb <- subset(df, blood != 'B')
 df.nb
 
-#07
+#Q07
 str(cars)
 dim(cars)
 #speed : 숫자형, dist : 숫자형
 
-#08
+#Q08
 #1 T
 #2 T
 #3 F
 #4 T
 #5 F
 
-#09
+#Q09
 #1
 number <- 1:7
 title <- c('그대랑', '다툼', '빨래', '두통', '보조개', '매듭', '이상해')
@@ -206,7 +206,7 @@ love
 best <- subset(love, like == max(like))
 best
 
-#10
+#Q10
 steve <- c(97, 100, 83, 95, 92)
 enderman <- c(88, 82, 90, 91, 87)
 creeper <- c(100, 96, 76, 89, 95)
@@ -224,5 +224,37 @@ final
 avg <- (mid + final) / 2
 avg
 
-#11
+#Q11
+cars
+#1
+class(cars)
+#2
+dim(cars)
+#3
+head(cars)
+#4
+str(cars)
+#5
+colMeans(cars)
+#6
+max(cars$dist)
+#7
+subset(cars, max(dist) == dist)
 
+
+#Q12
+#1
+is.matrix(InsectSprays)
+#2
+str(InsectSprays)
+#3
+tail(InsectSprays)
+#4
+levels(InsectSprays$spray)
+#5
+table(InsectSprays)
+#6
+InsectSprays.e <- subset(InsectSprays, InsectSprays$spray == 'E')
+InsectSprays.e
+#7
+mean(InsectSprays.e$count)
