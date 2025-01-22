@@ -146,7 +146,7 @@ while(n <= 20) {
 print(result)
 
 #Q06
-apply(mtcars[,c(1,4,6)], 2, mean)
+apply(mtcars[,c('mpg', 'hp', 'wt')], 2, mean)
 
 #Q07
 triangles.area <- function(base, height) {
@@ -160,6 +160,42 @@ area
 multiple.answer <- function(data) {
   res.min <- min(data)
   res.max <- max(data)
-  res.avg <- avg(data)
-  result <- 
+  res.avg <- mean(data)
+  result <- list(
+    min = res.min,
+    max = res.max,
+    avg = res.avg
+  )
+  return(result)
 }
+
+data <- c(seq(1, 9, 2))
+result <- multiple.answer(data)
+cat('min :', result$min, ', max :', result$max, ', avg :', result$avg, '\n')
+
+#Q09
+rownames(mtcars[which.max(mtcars$mpg),])
+rownames(mtcars[which.min(mtcars$mpg),])
+
+#Q10
+# 순서도 참조
+
+#Q11
+n <- c(0, 1)
+sum <- 0
+for (i in 3:20) {
+  n[i] <- n[i-1] + n[i-2]
+}
+n
+
+#Q12
+USArrests
+#1
+apply(USArrests[,c('Murder', 'Assault', 'Rape')], 1, sum)
+#2
+apply(USArrests[,c('Murder', 'Assault', 'Rape')], 1, mean)
+#3
+rownames(USArrests[which.max(USArrests$Murder),])
+#4
+USArrests[which.min(USArrests$Assault),]$Murder
+
