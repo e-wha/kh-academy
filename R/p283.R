@@ -306,3 +306,55 @@ res <- hist(sunspot, main = 'Histogram of sunspot',
             border = color.border)
 res$breaks
 res$counts
+
+
+#test4
+par(mfrow = c(1, 3))
+hist(trees$Girth, main = 'Girth',
+     xlab = 'inch',
+     breaks = 4)
+hist(trees$Height, main = 'Height',
+     xlab = 'ft',
+     breaks = 3)
+hist(trees$Volume, main = 'Volume',
+     xlab = 'ft',
+     breaks = 4)
+
+
+#test5
+library(ggplot2)
+ds <- diamonds
+str(ds)
+par(mfrow = c(1, 1), mar = c(3, 6, 3, 3))
+barplot(table(ds$cut), main = 'Quality of the cut',
+        xlab = 'cut',
+        las = 1,
+        col = 'pink')
+
+hist(ds$depth, main = 'Histogram of Depth',
+     xlab = 'percentage',
+     col = 'wheat')
+
+par(mfrow = c(2, 1))
+par(mfrow = c(1, 1)+.1)
+
+
+#test6
+getwd()
+setwd('C:/Temp')
+ds.all <- read.csv('Backpack.csv', header = T)
+str(ds.all)
+ds <- table(ds.all$Year, ds.all$BackProblems)
+barplot(ds, main = 'BackProblem',
+        names = c('No', 'Yes'),
+        beside = T,
+        legend.text = c('0 year', '1 year', '2 year', '3 year', '4 year', '5 year', '6year'),
+        args.legend = list(x = 'topright', bty = 'n'))
+Backpack.pb <- subset(ds.all, ds.all$BackProblems == 1)
+Backpack.pb
+ds.pb <- table(Backpack.pb$Year, Backpack.pb$Sex)
+length(Backpack.pb$Year)
+ds.pb
+barplot(ds.pb, main = 'BackPack 허리 문제',
+        beside = T,
+        legend.text = c('0 year', '1 year', '2 year', '3 year', '4 year', '5 year'))
