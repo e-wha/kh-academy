@@ -1,7 +1,7 @@
+<%@page import="org.big.dao.BookRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="org.big.dto.Book" %>
-<jsp:useBean id="bookDAO" class="org.big.dao.BookRepository" scope="session"></jsp:useBean>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="container py-4">
-   <%@ include file="menu.jsp" %>
+   		<%@ include file="menu.jsp" %>
       <div class="p-5 mb-4 bg-body-tertiary rounded-3">
          <div class="container-fluid py-5">
             <h1 class="display-5 fw-bold">도서목록</h1>
@@ -20,7 +20,9 @@
       </div>
       <%
       	String id = request.getParameter("id");
-      	Book book = bookDAO.getBookById(id);	 
+      	BookRepository dao = BookRepository.getInstance();
+      	Book book = dao.getBookById(id);
+      	
       %>
       <%=id %>
       <%-- <%=listofBooks %> --%>
@@ -41,7 +43,7 @@
                <p><b>재고수 : </b><%=book.getUnitsInStock() %>
                <p><%=book.getUnitPrice() %>원
                <p> <a href="#" class="btn btn-info">도서주문 &raquo;</a>
-               <p> <a href="./book.jsp?id=<%=book.getBookId()%>" class="btn btn-secondary" role="button">도서 목록 &raquo;</a>
+               <p> <a href="./books.jsp" class="btn btn-secondary" role="button">도서 목록 &raquo;</a>
             </div>
          </div>
       </div>

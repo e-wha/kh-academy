@@ -1,7 +1,7 @@
+<%@page import="org.apache.catalina.startup.ClassLoaderFactory.Repository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*, org.big.dto.*, org.big.dao.*" %>    
-<jsp:useBean id="bookDAO" class="org.big.dao.BookRepository" scope="session"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,21 +19,25 @@
          </div>
       </div>
       <%
-         ArrayList<Book> listofBooks = bookDAO.getAllBooks();
+      	BookRepository dao = BookRepository.getInstance();
+      	ArrayList<Book> listofBooks = dao.getAllBooks(); 
       %>
       <%-- <%=listofBooks %> --%>
       <div class="row align-items-md-stretch text-center">
          <%
             for (int i = 0; i < listofBooks.size(); i++) {
                Book book = listofBooks.get(i);
-            
+               String description = book.getDescription();
+               if (description != null && description.length() > 60) {
+            	   description = description.substring(0, 60);
+               }
          %>
          <div class="col-md-4">
             <div class="h-100 p-2">
                <h5><b><%=book.getName() %></b></h5>
                <p><%=book.getAuthor() %>
                <br><%=book.getPublisher() %> | <%=book.getReleaseDate() %>
-               <p><%=book.getDescription().substring(0, 60) %>...
+               <p><%=description %>...
                <p><%=book.getUnitPrice() %>원
                <p> <a href="./book.jsp?id=<%=book.getBookId()%>" class="btn btn-secondary" role="button">상세 정보 &raquo;</a>
             </div>

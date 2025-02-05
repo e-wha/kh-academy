@@ -7,6 +7,15 @@ import org.big.dto.Book;
 public class BookRepository {
    
    private ArrayList<Book> listOfBooks = new ArrayList<Book>();
+   private static BookRepository instance = new BookRepository();
+   
+   public static BookRepository getInstance() {
+	   return instance;
+   }
+   
+   public void addBook(Book book) {
+	   listOfBooks.add(book);
+   }
    
    public BookRepository() {
       // TODO Auto-generated constructor stub
