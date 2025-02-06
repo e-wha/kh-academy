@@ -26,6 +26,10 @@
 			out.println(original + "<br>");
 			out.println(type + "<br>");
 			out.println(file + "<br>");
+			
+			if(file != null) {
+				out.println("파일 크기 : " + file.length() + "<br>");
+			}
 		}
 		
 	%>
