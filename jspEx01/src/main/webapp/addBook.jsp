@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>도서 등록</title>
 <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
+<script type="text/javascript" src="./resources/js/validation.js"></script>
 </head>
 <body>
 	<div class="container py-4">
@@ -89,7 +90,7 @@
       		</div>
       		<div class="mb-3 row">
       			<div class="col-sm-offset-2 col-sm-10">
-      				<input type="submit" class="btn btn-primary" value="등록">
+      				<input type="submit" class="btn btn-primary" value="등록" onclick="CheckAddBook()">
       			</div>
       		</div>
       	</form>    		

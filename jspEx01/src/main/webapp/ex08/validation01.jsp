@@ -17,6 +17,7 @@
 				form.passwd.focus();
 				return false;
 			}
+			form.submit();
 		}
 	</script>
 </head>
