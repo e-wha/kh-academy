@@ -18,7 +18,10 @@
          </div>
       </div>
       
-      <div class="row align-items-md-stretch">
+	  <div class="row align-items-md-stretch">
+		<div class="text-end">
+			<a href="logout.jsp" class="btn btn-sm btn-success pull right">logout</a>
+      	</div>
       	<form action="./processAddBook.jsp" method="post" name="newBook" class="form-horizontal" enctype="multipart/form-data">
       		<div class="mb-3 row">
       			<label class="col-sm-2">도서코드</label>
