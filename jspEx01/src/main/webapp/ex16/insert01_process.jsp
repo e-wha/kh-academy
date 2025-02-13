@@ -17,11 +17,32 @@
 		String name = request.getParameter("name");
 		
 		Statement stmt = null;
+		PreparedStatement pstmt = null;
 		
 		try {
-			String sql = "insert into member(id, passwd, name) values('" + id + "', '" + passwd + "', '" + name + "')";
-			
-					
+			/* String sql = "insert into member(id, passwd, name) values('" + id + "', '" + passwd + "', '" + name + "')"; */
+			String sql = "insert into member(id, passwd, name) values(?, ?, ?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, passwd);
+			pstmt.setString(3, name);
+			pstmt.executeUpdate();
+			/* stmt = conn.createStatement();
+			stmt.execute(sql); */
+			out.println("member 테이블 삽입이 성공했습니다.");
+		} catch (SQLException ex) {
+			out.println("member 테이블 삽입이 실패했습니다. <br>");
+			out.println("SQLexception : " + ex.getMessage());
+		} finally {
+			/* if (stmt != null) {
+				stmt.close();
+			} */
+			if (pstmt != null) {
+				pstmt.close();
+			}
+			if (conn != null) {
+				conn.close();
+			}
 		}
 	%>
 </body>
