@@ -13,6 +13,7 @@
 	Book book = dao.getBookById(id);
 	if (book == null) {
 		response.sendRedirect("exceptionNoBookId.jsp");
+		return;
 	}
 	
 	ArrayList<Book> goodList = dao.getAllBooks();

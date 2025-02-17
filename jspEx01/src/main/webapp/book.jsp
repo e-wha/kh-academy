@@ -57,7 +57,7 @@
 	               <p><b>분류 : </b><%=rs.getString("b_category") %>
 	               <p><b>재고수 : </b><%=rs.getString("b_condition") %>
 	               <p><%=rs.getString("b_unitPrice") %>원
-	               <p> <form action="./addCart.jsp?id=<%=rs.getString("b_name") %>" method="post" name="addForm">
+	               <p> <form action="./addCart.jsp?id=<%=rs.getString("b_id") %>" method="post" name="addForm">
 		               		<a href="#" class="btn btn-info" onclick="addToCart()">도서주문 &raquo;</a>
 		               		<a href="./cart.jsp" class="btn btn-warning">장바구니 &raquo;</a>
 		               		<a href="./books.jsp" class="btn btn-secondary" role="button">도서 목록 &raquo;</a>
