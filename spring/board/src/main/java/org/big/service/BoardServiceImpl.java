@@ -18,4 +18,35 @@ public class BoardServiceImpl implements BoardService{
 		// TODO Auto-generated method stub
 		return boardMapper.selectBoardList();
 	}
+	
+	@Override
+	public void insertBoard(BoardDto board) throws Exception {
+		// TODO Auto-generated method stub
+		boardMapper.insertBoard(board);
+	}
+	
+	@Override
+	public void updateHitCount(int boardIdx) throws Exception {
+		// TODO Auto-generated method stub
+		boardMapper.updateHitCount(boardIdx);
+	}
+	
+	@Override
+	public BoardDto selectBoardDetail(int boardIdx) throws Exception {
+		// TODO Auto-generated method stub
+		BoardDto board = boardMapper.selectBoardDetail(boardIdx);
+		return board;
+	}
+	
+	@Override
+	public void updateBoard(BoardDto board) throws Exception {
+		// TODO Auto-generated method stub
+		boardMapper.updateBoard(board);
+	}
+	
+	@Override
+	public void deleteBoard(int boardIdx) throws Exception {
+		// TODO Auto-generated method stub
+		boardMapper.deleteBoard(boardIdx);
+	}
 }
