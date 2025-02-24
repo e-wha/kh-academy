@@ -2,6 +2,8 @@ package org.big;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 @SpringBootApplication
 public class BoardApplication {

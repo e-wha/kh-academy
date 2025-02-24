@@ -20,7 +20,7 @@
   	</select>
   	
   	<insert id="insertBoard" parameterType="org.big.dto.BoardDto" useGeneratedKeys="true">
-  		<selectKey keyProperty="board_idx" resultType="int" order="AFTER">
+  		<selectKey keyProperty="boardIdx" resultType="int" order="AFTER">
   			SELECT tboard_seq.currval FROM dual
   		</selectKey>
   			<![CDATA[
@@ -91,4 +91,58 @@
   		WHERE
   			board_idx = #{boardIdx}	
   	</delete>
+  	
+  	<insert id="insertBoardFileList" parameterType="org.big.dto.BoardFileDto">
+  		INSERT ALL
+  		<foreach collection="list" item="item" index="index" open="" separator=" " close="SELECT * FROM DUAL" >
+  			INTO t_file
+  			(
+  				idx,
+  				board_idx,
+  				original_file_name,
+  				stored_file_path,
+  				file_size,
+  				creator_id,
+  				created_datetime
+  			)
+  			VALUES
+  			(
+  				extractvalue(dbms_xmlgen.getxmltype('select tfile_seq.nextval - 1 from dual'), '//text()'),
+  				#{item.boardIdx},
+  				#{item.originalFileName},
+  				#{item.storedFilePath},
+  				#{item.fileSize},
+  				'admin',
+  				sysdate
+  			)
+  		</foreach>
+  	</insert>
+  	
+  	<select id="selectBoardFileList" resultType="org.big.dto.BoardFileDto" parameterType="int">
+  		<![CDATA[
+  			SELECT
+  				idx,
+  				board_idx,
+  				original_file_name,
+  				ROUND(file_size / 1024, 0) AS file_size
+  			FROM
+  				t_file
+  			WHERE
+  				board_idx = #{boardIdx} AND deleted_yn = 'N'
+  		]]>
+  	</select>
+  	
+  	<select id="selectBoardFileInformation" parameterType="map" resultType="org.big.dto.BoardFileDto">
+  		<![CDATA[
+  			SELECT
+  				original_file_name,
+  				stored_file_path,
+  				file_size
+  			FROM
+  				t_file
+  			WHERE
+  				idx = #{idx} AND board_idx = #{boardIdx} AND deleted_yn = 'N'
+  		]]>
+  	</select>
+  	
   </mapper>

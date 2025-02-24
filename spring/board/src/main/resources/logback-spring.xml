@@ -15,6 +15,13 @@
 	<logger name="board" level="DEBUG" appender-ref="console" />
 	<logger name="jdbc.sqlonly" level="INFO" appender-ref="console-infolog" />
 	<logger name="jdbc.resultsettable" level="INFO" appender-ref="console-infolog" />
+	<logger name="org.big.controller.BoardController" level="INFO"/>
+	<logger name="org.big.service.BoardServiceImpl" level="INFO"/>
+	<logger name="org.big.mapper.BoardMapper" level="INFO"/>
+	<logger name="org.springframework.jdbc" level="error"/>
+	<logger name="org.big.interceptor.LoggerInterceptor" level="DEBUG" appender-ref="console" />
+	<logger name="org.big.aop.LoggerAspect" level="DEBUG" appender-ref="console" />
+	
 	<root level="off">
 		<appender-ref ref="console"/>
 	</root>

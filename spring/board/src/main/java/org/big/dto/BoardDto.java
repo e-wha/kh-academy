@@ -2,6 +2,7 @@ package org.big.dto;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 import lombok.Data;
 
@@ -16,4 +17,5 @@ public class BoardDto {
 	private String creatorId;
 	private LocalDateTime updatedDatetime;
 	private String updatorId;
+	private List<BoardFileDto> fileList;
 }
