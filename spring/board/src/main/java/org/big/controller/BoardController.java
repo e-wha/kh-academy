@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,7 +28,7 @@ public class BoardController {
 	
 	@RequestMapping("/board/openBoardList.do")
 	public ModelAndView openBoardList() throws Exception{
-		ModelAndView mv = new ModelAndView("/board/boardList");
+		ModelAndView mv = new ModelAndView("thymeleaf/board/boardList");
 		
 		List<BoardDto> list = boardService.selectBoardList();
 		mv.addObject("list", list);
@@ -36,7 +37,7 @@ public class BoardController {
 	
 	@RequestMapping("/board/openBoardWrite.do")
 	public String openBoardWrite() throws Exception {
-		return "/board/boardWrite";
+		return "thymeleaf/board/boardWrite";
 	}
 	
 	@RequestMapping("/board/insertBoard.do")
@@ -47,7 +48,7 @@ public class BoardController {
 	
 	@RequestMapping("/board/openBoardDetail.do")
 	public ModelAndView opendBoardDetail(@RequestParam("boardIdx") int boardIdx) throws Exception{
-		ModelAndView mv = new ModelAndView("/board/boardDetail");
+		ModelAndView mv = new ModelAndView("thymeleaf/board/boardDetail");
 		
 		BoardDto board = boardService.selectBoardDetail(boardIdx);
 		mv.addObject("board", board);

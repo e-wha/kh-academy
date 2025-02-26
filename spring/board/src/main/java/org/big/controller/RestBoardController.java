@@ -27,6 +27,8 @@ public class RestBoardController {
 	@Autowired
 	private BoardService boardService;
 	
+	
+	
 	@RequestMapping(value="/board", method=RequestMethod.GET)
 	public ModelAndView openBoardList() throws Exception {
 		ModelAndView mv = new ModelAndView("/board/restBoardList");
